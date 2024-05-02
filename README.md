@@ -4,7 +4,7 @@
 [![](https://visitcount.itsvg.in/api?id=danish-kv&icon=5&color=4)](https://visitcount.itsvg.in)
 
 🔭 I’m currently working on Django + React<br><br>
-🌱 I’m currently learning **React** <br><br>
+🌱 I’m currently learning **MongoDB** <br><br>
 💬 Ask me about **Django, Python, Html, React, SQL** <br><br>
 📫 How to reach me **muhammeddanishkv05@gmail.com**
 
