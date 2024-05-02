@@ -17,15 +17,8 @@
 # 📊 GitHub Stats:
 ![](https://github-readme-stats.vercel.app/api?username=danish-kv&theme=merko&hide_border=false&include_all_commits=false&count_private=false)<br/>
 ![](https://github-readme-streak-stats.herokuapp.com/?user=danish-kv&theme=merko&hide_border=false)<br/>
-
-
-## 🏆 GitHub Trophies
-![](https://github-profile-trophy.vercel.app/?username=danish-kv&theme=dracula&no-frame=false&no-bg=false&margin-w=4)
-
-### 🔝 Top Contributed Repo
-![](https://github-contributor-stats.vercel.app/api?username=danish-kv&limit=5&theme=radical&combine_all_yearly_contributions=true)
+![](https://github-readme-stats.vercel.app/api/top-langs/?username=danish-kv&theme=merko&hide_border=false&include_all_commits=false&count_private=false&layout=compact)
 
 ---
-[![](https://visitcount.itsvg.in/api?id=danish-kv&icon=5&color=4)](https://visitcount.itsvg.in)
 
 <!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
