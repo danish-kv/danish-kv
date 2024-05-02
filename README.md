@@ -1,15 +1,12 @@
-<h1 align="center">Hi , I'm Danish </h1>
-<h3 align="center">I am a Full Stack Developer.</h3>
+<h1 align="center">Hi 👋, I'm Muhammed Danish K V</h1>
+<h3 align="center">A passionate Python django with react.js full stack developer from India</h3>
 
 [![](https://visitcount.itsvg.in/api?id=danish-kv&icon=5&color=4)](https://visitcount.itsvg.in)
 
-- 🌱 I’m currently learning Python Django React Full stack development **Python, Django, React**
-
-- 👨‍💻 All of my projects are available at 
-
-- 💬 Ask me about **Python**
-
-- 📫 How to reach me **muhammeddanishkv05@gmail.com**
+🔭 I’m currently working on Django + React<br><br>
+🌱 I’m currently learning **React** <br><br>
+💬 Ask me about **Django, Python, Html, React, SQL** <br><br>
+📫 How to reach me **muhammeddanishkv05@gmail.com**
 
 
 ## 🌐 Socials:
