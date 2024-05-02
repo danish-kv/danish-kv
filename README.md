@@ -1,7 +1,15 @@
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=danish-kv&label=Profile%20views&color=0091ff&style=flat" alt="danish-kv" /> </p>
+<h1 align="center">Hi , I'm Danish </h1>
+<h3 align="center">I am a Full Stack Developer.</h3>
 
-# 💫 About Me:
-🔭 I’m currently working on<br>👯 I’m looking to collaborate on<br>🤝 I’m looking for help with<br>🌱 I’m currently learning<br>💬 Ask me about<br>⚡ Fun fact
+[![](https://visitcount.itsvg.in/api?id=danish-kv&icon=5&color=4)](https://visitcount.itsvg.in)
+
+- 🌱 I’m currently learning Python Django React Full stack development **Python, Django, React**
+
+- 👨‍💻 All of my projects are available at 
+
+- 💬 Ask me about **Python**
+
+- 📫 How to reach me **muhammeddanishkv05@gmail.com**
 
 
 ## 🌐 Socials:
