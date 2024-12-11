@@ -36,9 +36,6 @@ About Me
 I’m curious about how software works behind the scenes and enjoy solving problems. I love learning new things, exploring different technologies, and staying updated with the latest in tech. Being part of discussions and communities helps me grow and share what I learn
 </p>
 <!-- Technologies and Tools -->
-<!-- Technologies and Tools -->
-<h2 align="center">Technologies and Tools</h2>
-
 <h2 align="center">Technologies and Tools</h2>
 <p align="center">
   <img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python" />
@@ -70,7 +67,7 @@ I’m curious about how software works behind the scenes and enjoy solving probl
 </p>
 
 
-# 📊 GitHub Stats:
+## 📊 GitHub Stats:
 ![](https://github-readme-stats.vercel.app/api?username=danish-kv&theme=merko&hide_border=false&include_all_commits=false&count_private=false)<br/>
 ![](https://github-readme-streak-stats.herokuapp.com/?user=danish-kv&theme=merko&hide_border=false)<br/>
 
