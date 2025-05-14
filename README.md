@@ -1,5 +1,5 @@
 
-[![](https://visitcount.itsvg.in/api?id=danish-kv&label=Profile%20Views&color=5&icon=5&pretty=false)](https://visitcount.itsvg.in)
+[![](https://visitcountpro.itsvg.in/api?id=danish-kv&label=Profile%20Views&color=5&icon=5&pretty=false)](https://visitcount.itsvg.in)
 
 
 <!-- Intro -->
