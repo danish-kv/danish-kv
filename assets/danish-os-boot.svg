@@ -57,7 +57,7 @@
   <circle cx="44" cy="42" r="6" class="accent"/><circle cx="66" cy="42" r="6" fill="#5A6472"/><circle cx="88" cy="42" r="6" fill="#39424E"/>
   <text x="118" y="47" class="mono muted" font-size="13" letter-spacing="1.5">danish.os / boot</text>
   <circle cx="1024" cy="42" r="4" class="accent live"/>
-  <text x="1038" y="46" class="mono muted" font-size="12">online &#183; v1.1.0</text>
+  <text x="1038" y="46" class="mono muted" font-size="12">online &#183; v1.2.0</text>
   <line x1="40" y1="68" x2="1160" y2="68" stroke="#2A313C" stroke-width="1"/>
 
   <!-- identity -->

@@ -2,7 +2,7 @@
 # The single file you edit to keep the profile fresh. After editing, run
 # scripts/generate_profile_assets.py (or let the weekly workflow do it).
 
-version: "1.1.0"
+version: "1.2.0"
 
 # ---- identity / status --------------------------------------------------
 # Shown in the live console ($ status) — keep it short (max ~60 chars).

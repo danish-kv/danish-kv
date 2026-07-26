@@ -1,5 +1,5 @@
 <!--
-  DANISH.OS v1.1 — a living developer system.
+  DANISH.OS v1.2 — a living developer system.
   Built as a small product, not a badge wall. Everything is real or a
   clearly-marked placeholder. Edit profile-data.yml and run
   scripts/generate_profile_assets.py to refresh the dynamic parts;
@@ -36,7 +36,7 @@
 
 <br><br>
 
-<img src="assets/visitor-scan.svg" width="100%" alt="Decorative visitor panel: visitor session detected, profile environment loaded, architecture access granted. Session guest, read-only. A note confirms it is decorative and no data is collected.">
+<img src="assets/danish-fetch.svg" width="100%" alt="danishfetch — a neofetch-style system readout. A dot-matrix letter D monogram beside the specs: OS DANISH.OS self-built; host Muhammed Danish, India; kernel full_stack; uptime always building; shell python and javascript; frontend react, redux, tailwind, shadcn; backend django, drf, fastapi; data postgresql and mongodb; infra aws, docker, kubernetes; realtime websockets; design figma, system and db design; contact linkedin.com/in/danish5; status building — ending with the theme palette bar and a blinking cursor.">
 
 </div>
 
@@ -340,7 +340,7 @@ be shaped — I'm glad to talk. Best ways in:
 <sub>DANISH.OS &#183; designing the path from interface to infrastructure</sub>
 <br>
 <sub><!-- REFRESH:START -->
-`DANISH.OS v1.1.0 · last refresh 2026-07-26`
+`DANISH.OS v1.2.0 · last refresh 2026-07-26`
 <!-- REFRESH:END --></sub>
 </div>
 

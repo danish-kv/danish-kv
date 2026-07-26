@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  danishfetch — a neofetch-style system readout for DANISH.OS.
+  Left: a dot-matrix "D" monogram (the OS's dot-grid motif as identity mark)
+  that draws in column by column, then shimmers. Right: the spec sheet —
+  OS, host, kernel, uptime, shell, layers — ending with the theme palette bar.
+  No scripts, no external fonts, reduced-motion safe, fully readable static.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="100%" role="img" aria-labelledby="dfTitle dfDesc" preserveAspectRatio="xMidYMid meet">
+  <title id="dfTitle">danishfetch — DANISH.OS system readout for Muhammed Danish</title>
+  <desc id="dfDesc">A terminal fetch panel. On the left, a dot-matrix letter D monogram lights up. On the right, a system readout lists: OS DANISH.OS self-built; host Muhammed Danish, India; kernel full_stack; uptime always building; shell python and javascript; frontend react, redux, tailwind, shadcn; backend django, drf, fastapi; data postgresql and mongodb; infra aws, docker, kubernetes; realtime websockets; design figma, system and db design; contact linkedin.com/in/danish5; status building. A row of theme palette swatches sits at the bottom and a cursor blinks at the prompt.</desc>
+
+  <defs>
+    <style>
+      .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", "Cascadia Code", "Fira Code", Menlo, Consolas, monospace; }
+      .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif; }
+      .fg { fill: #E6EDF3; } .muted { fill: #8B949E; } .dim { fill: #6E7681; } .accent { fill: #E9A23B; }
+
+      @keyframes rise { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+      @keyframes pop  { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+      @keyframes shim { 0%, 100% { opacity: 1; } 50% { opacity: .45; } }
+      @keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+      @keyframes pulse { 0%, 100% { opacity: .3; } 50% { opacity: 1; } }
+
+      .r { transform-box: fill-box; }
+
+      /* monogram columns: draw in left-to-right, then shimmer forever */
+      .c0 { transform-box: fill-box; animation: pop .35s ease-out .30s both, shim 3.4s ease-in-out 1.6s infinite; }
+      .c1 { transform-box: fill-box; animation: pop .35s ease-out .45s both, shim 3.4s ease-in-out 1.75s infinite; }
+      .c2 { transform-box: fill-box; animation: pop .35s ease-out .60s both, shim 3.4s ease-in-out 1.9s infinite; }
+      .c3 { transform-box: fill-box; animation: pop .35s ease-out .75s both, shim 3.4s ease-in-out 2.05s infinite; }
+      .c4 { transform-box: fill-box; animation: pop .35s ease-out .90s both, shim 3.4s ease-in-out 2.2s infinite; }
+      .c5 { transform-box: fill-box; animation: pop .35s ease-out 1.05s both, shim 3.4s ease-in-out 2.35s infinite; }
+      .cap { animation: rise .4s ease-out 1.4s both; }
+
+      /* readout prints fast, like a real fetch */
+      .h0 { animation: rise .3s ease-out .2s both; }
+      .l1 { animation: rise .25s ease-out  .40s both; } .l2 { animation: rise .25s ease-out  .52s both; }
+      .l3 { animation: rise .25s ease-out  .64s both; } .l4 { animation: rise .25s ease-out  .76s both; }
+      .l5 { animation: rise .25s ease-out  .88s both; } .l6 { animation: rise .25s ease-out 1.00s both; }
+      .l7 { animation: rise .25s ease-out 1.12s both; } .l8 { animation: rise .25s ease-out 1.24s both; }
+      .l9 { animation: rise .25s ease-out 1.36s both; } .l10 { animation: rise .25s ease-out 1.48s both; }
+      .l11 { animation: rise .25s ease-out 1.60s both; } .l12 { animation: rise .25s ease-out 1.72s both; }
+      .l13 { animation: rise .3s ease-out 1.9s both; }
+      .pal { animation: rise .4s ease-out 2.15s both; }
+      .p14 { animation: rise .3s ease-out 2.4s both; }
+      .cursor { animation: rise .3s ease-out 2.4s both, blink 1.1s step-end 2.8s infinite; }
+      .live { animation: pulse 2.6s ease-in-out infinite; }
+
+      @media (prefers-reduced-motion: reduce) {
+        .c0,.c1,.c2,.c3,.c4,.c5,.cap,.h0,.l1,.l2,.l3,.l4,.l5,.l6,.l7,.l8,.l9,.l10,.l11,.l12,.l13,.pal,.p14,.cursor,.live { animation: none; }
+      }
+    </style>
+    <pattern id="dfGrid" width="34" height="34" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1.5" fill="#8B949E" opacity="0.08"/>
+    </pattern>
+  </defs>
+
+  <!-- panel -->
+  <rect x="6" y="6" width="1188" height="548" rx="20" fill="#0D1117" stroke="#2A313C" stroke-width="1.5"/>
+  <rect x="6" y="6" width="1188" height="548" rx="20" fill="url(#dfGrid)"/>
+
+  <!-- title bar -->
+  <circle cx="44" cy="42" r="6" class="accent"/><circle cx="66" cy="42" r="6" fill="#5A6472"/><circle cx="88" cy="42" r="6" fill="#39424E"/>
+  <text x="118" y="47" class="mono muted" font-size="13" letter-spacing="1.5">danish.os / fetch</text>
+  <circle cx="1058" cy="42" r="4" class="accent live"/>
+  <text x="1072" y="46" class="mono muted" font-size="12">tty1</text>
+  <line x1="40" y1="68" x2="1160" y2="68" stroke="#2A313C" stroke-width="1"/>
+
+  <!-- ===== left: dot-matrix D monogram (cell 34, r 10.5) ===== -->
+  <!-- col 0 (spine, amber): rows 0-8 -->
+  <g class="c0" fill="#E9A23B">
+    <circle cx="150" cy="120" r="10.5"/><circle cx="150" cy="154" r="10.5"/><circle cx="150" cy="188" r="10.5"/>
+    <circle cx="150" cy="222" r="10.5"/><circle cx="150" cy="256" r="10.5"/><circle cx="150" cy="290" r="10.5"/>
+    <circle cx="150" cy="324" r="10.5"/><circle cx="150" cy="358" r="10.5"/><circle cx="150" cy="392" r="10.5"/>
+  </g>
+  <!-- cols 1-4 (top + bottom rows, gray) -->
+  <g class="c1" fill="#4A5560">
+    <circle cx="184" cy="120" r="10.5"/><circle cx="184" cy="392" r="10.5"/>
+  </g>
+  <g class="c2" fill="#4A5560">
+    <circle cx="218" cy="120" r="10.5"/><circle cx="218" cy="392" r="10.5"/>
+  </g>
+  <g class="c3" fill="#4A5560">
+    <circle cx="252" cy="120" r="10.5"/><circle cx="252" cy="392" r="10.5"/>
+  </g>
+  <g class="c4" fill="#4A5560">
+    <circle cx="286" cy="120" r="10.5"/><circle cx="286" cy="392" r="10.5"/>
+  </g>
+  <!-- col 5 (bowl, gray): rows 1-7 -->
+  <g class="c5" fill="#4A5560">
+    <circle cx="320" cy="154" r="10.5"/><circle cx="320" cy="188" r="10.5"/><circle cx="320" cy="222" r="10.5"/>
+    <circle cx="320" cy="256" r="10.5"/><circle cx="320" cy="290" r="10.5"/><circle cx="320" cy="324" r="10.5"/>
+    <circle cx="320" cy="358" r="10.5"/>
+  </g>
+
+  <g class="r cap">
+    <text x="235" y="448" class="sans" font-size="20" font-weight="800" text-anchor="middle"><tspan class="fg">DANISH</tspan><tspan class="accent">.OS</tspan></text>
+    <text x="235" y="472" class="mono dim" font-size="11" text-anchor="middle">dot-matrix core &#183; est. curiosity</text>
+  </g>
+
+  <!-- ===== right: fetch readout ===== -->
+  <g class="r h0">
+    <text x="470" y="106" class="mono" font-size="15"><tspan class="accent">danish</tspan><tspan class="dim">@</tspan><tspan class="fg">danish.os</tspan></text>
+    <line x1="470" y1="120" x2="1150" y2="120" stroke="#2A313C" stroke-width="1"/>
+  </g>
+
+  <g class="mono" font-size="14">
+    <text x="470" y="150" class="r l1"><tspan class="accent">OS</tspan><tspan class="dim"> ............ </tspan><tspan class="fg">DANISH.OS v1.2 &#183; self-built</tspan></text>
+    <text x="470" y="178" class="r l2"><tspan class="accent">host</tspan><tspan class="dim"> .......... </tspan><tspan class="fg">Muhammed Danish &#183; India</tspan></text>
+    <text x="470" y="206" class="r l3"><tspan class="accent">kernel</tspan><tspan class="dim"> ........ </tspan><tspan class="fg">full_stack</tspan></text>
+    <text x="470" y="234" class="r l4"><tspan class="accent">uptime</tspan><tspan class="dim"> ........ </tspan><tspan class="fg">always building</tspan></text>
+    <text x="470" y="262" class="r l5"><tspan class="accent">shell</tspan><tspan class="dim"> ......... </tspan><tspan class="fg">python &#183; javascript</tspan></text>
+    <text x="470" y="290" class="r l6"><tspan class="accent">frontend</tspan><tspan class="dim"> ...... </tspan><tspan class="fg">react &#183; redux &#183; tailwind &#183; shadcn</tspan></text>
+    <text x="470" y="318" class="r l7"><tspan class="accent">backend</tspan><tspan class="dim"> ....... </tspan><tspan class="fg">django &#183; drf &#183; fastapi</tspan></text>
+    <text x="470" y="346" class="r l8"><tspan class="accent">data</tspan><tspan class="dim"> .......... </tspan><tspan class="fg">postgresql &#183; mongodb</tspan></text>
+    <text x="470" y="374" class="r l9"><tspan class="accent">infra</tspan><tspan class="dim"> ......... </tspan><tspan class="fg">aws &#183; docker &#183; kubernetes</tspan></text>
+    <text x="470" y="402" class="r l10"><tspan class="accent">realtime</tspan><tspan class="dim"> ...... </tspan><tspan class="fg">websockets</tspan></text>
+    <text x="470" y="430" class="r l11"><tspan class="accent">design</tspan><tspan class="dim"> ........ </tspan><tspan class="fg">figma &#183; system &amp; db design</tspan></text>
+    <text x="470" y="458" class="r l12"><tspan class="accent">contact</tspan><tspan class="dim"> ....... </tspan><tspan class="fg">linkedin.com/in/danish5</tspan></text>
+  </g>
+
+  <g class="r l13">
+    <text x="470" y="490" class="mono" font-size="14"><tspan class="accent">status</tspan><tspan class="dim"> ........ </tspan><tspan class="accent">building</tspan></text>
+    <circle cx="692" cy="485" r="4" class="accent live"/>
+  </g>
+
+  <!-- palette bar: the DANISH.OS theme, neofetch-style -->
+  <g class="r pal">
+    <rect x="470"  y="508" width="26" height="16" rx="3" fill="#0D1117" stroke="#2A313C"/>
+    <rect x="502"  y="508" width="26" height="16" rx="3" fill="#11161D" stroke="#2A313C"/>
+    <rect x="534"  y="508" width="26" height="16" rx="3" fill="#21262D"/>
+    <rect x="566"  y="508" width="26" height="16" rx="3" fill="#2A313C"/>
+    <rect x="598"  y="508" width="26" height="16" rx="3" fill="#39424E"/>
+    <rect x="630"  y="508" width="26" height="16" rx="3" fill="#5A6472"/>
+    <rect x="662"  y="508" width="26" height="16" rx="3" fill="#6E7681"/>
+    <rect x="694"  y="508" width="26" height="16" rx="3" fill="#8B949E"/>
+    <rect x="726"  y="508" width="26" height="16" rx="3" fill="#E6EDF3"/>
+    <rect x="758"  y="508" width="26" height="16" rx="3" fill="#E9A23B"/>
+  </g>
+
+  <text x="820" y="521" class="mono accent p14" font-size="15">&#10095;</text>
+  <rect x="842" y="508" width="9" height="15" class="accent cursor"/>
+
+  <text x="1150" y="521" class="mono dim" font-size="10" text-anchor="end">danishfetch &#183; the specs are the person</text>
+</svg>
