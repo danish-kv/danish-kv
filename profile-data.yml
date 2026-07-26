@@ -1,16 +1,48 @@
 # DANISH.OS — profile data
-# The single file you edit to keep the profile fresh. No code changes needed.
+# The single file you edit to keep the profile fresh. After editing, run
+# scripts/generate_profile_assets.py (or let the weekly workflow do it).
 
-version: "1.0.0"
+version: "1.1.0"
 
-# Source for the "Latest from the notebook" section. The workflow reads this
-# RSS feed and rewrites the BLOG block in README.md. Change the handle if your
-# Medium username changes.
+# ---- identity / status --------------------------------------------------
+# Shown in the live console ($ status) — keep it short (max ~60 chars).
+status_text: "Available for meaningful collaboration"
+
+# Shown in the live console ($ current_focus) and Active Processes.
+current_focus: "Reliable APIs, deployment systems, and product engineering"
+
+# PLACEHOLDER — replace with what you are actually building right now.
+current_project: "A full-stack operations tool — FastAPI services with a React front end"
+
+# PLACEHOLDER — replace with what you are actually learning right now.
+current_learning: "Deeper system design, API contracts, and scaling data"
+
+# ---- featured projects ---------------------------------------------------
+# PLACEHOLDERS — replace name/note with real repositories (max 16 chars name,
+# 24 chars note, so they fit the galaxy satellites). These feed
+# assets/repository-galaxy.svg via the generator.
+featured_projects:
+  - name: "PROJECT_01"
+    note: "swap in a real repo"
+  - name: "PROJECT_02"
+    note: "swap in a real repo"
+  - name: "PROJECT_03"
+    note: "swap in a real repo"
+  - name: "PROJECT_04"
+    note: "swap in a real repo"
+
+# ---- writing --------------------------------------------------------------
+# RSS source for the Latest Writing section (README BLOG block).
 medium_feed: "https://medium.com/@danish_muhd/feed"
 
-# One of these is surfaced each week in the Developer Console (rotated by ISO
-# week number, so it changes without spamming commits). Keep them short and
-# make them yours — add, edit, or remove freely.
+# ---- links ----------------------------------------------------------------
+social:
+  linkedin: "https://www.linkedin.com/in/danish5/"
+  medium: "https://medium.com/@danish_muhd/"
+  github: "https://github.com/danish-kv"
+
+# ---- engineering notes ----------------------------------------------------
+# One is surfaced each week in the Developer Console, rotated by ISO week.
 notes:
   - "Clarity is a feature. If the next person can't read it, it isn't finished."
   - "The data model is the real architecture. Everything else negotiates with it."

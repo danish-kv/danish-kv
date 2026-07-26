@@ -1,16 +1,16 @@
 <!--
-  DANISH.OS — a living developer system.
-  This profile is built as a small product, not a badge wall.
-  Everything here is real or a clearly-marked placeholder. Edit the
-  placeholders, and keep the START / END marker comments intact so the
-  weekly workflow can refresh the dynamic parts.
-  Easter egg: the boot bar reads 100%, but the boot never really finishes.
-  Neither does the work. That's the point.
+  DANISH.OS v1.1 — a living developer system.
+  Built as a small product, not a badge wall. Everything is real or a
+  clearly-marked placeholder. Edit profile-data.yml and run
+  scripts/generate_profile_assets.py to refresh the dynamic parts;
+  keep the START / END marker comments intact.
+  psst — there's a root-access console further down. The password is
+  obviously not a real password. Or is it? (it isn't.)
 -->
 
 <div align="center">
 
-<img src="assets/danish-os-hero.svg" width="100%" alt="DANISH.OS boot panel. Muhammed Danish, full-stack systems builder. System status: runtime full_stack, mode curious, location India, status building. A signal path runs from interface to application and API to data to infrastructure.">
+<img src="assets/danish-os-boot.svg" width="100%" alt="DANISH.OS boot screen. Muhammed Danish, full-stack systems builder, India. A boot log initialises the interface, API gateway, data layer and infrastructure, a progress bar fills, and SYSTEM READY appears. A signal packet travels a runtime path from interface to API to data to infrastructure.">
 
 <p>
   <a href="https://www.linkedin.com/in/danish5/"><b>LinkedIn</b></a>
@@ -22,14 +22,21 @@
 
 <samp>
   <a href="#system-manifest">manifest</a> &#183;
-  <a href="#architecture-map">architecture</a> &#183;
+  <a href="#architecture-flow">architecture</a> &#183;
   <a href="#active-processes">processes</a> &#183;
-  <a href="#build-logs">logs</a> &#183;
+  <a href="#deployment-pipeline">pipeline</a> &#183;
+  <a href="#repository-galaxy">galaxy</a> &#183;
   <a href="#engineering-principles">principles</a> &#183;
+  <a href="#latest-writing">writing</a> &#183;
   <a href="#telemetry">telemetry</a> &#183;
   <a href="#developer-console">console</a> &#183;
+  <a href="#root-access">root</a> &#183;
   <a href="#connection-port">connect</a>
 </samp>
+
+<br><br>
+
+<img src="assets/visitor-scan.svg" width="100%" alt="Decorative visitor panel: visitor session detected, profile environment loaded, architecture access granted. Session guest, read-only. A note confirms it is decorative and no data is collected.">
 
 </div>
 
@@ -53,43 +60,32 @@ actually enjoy.
 
 ---
 
-## Architecture Map
+## Architecture Flow
 
-<samp>~/danish.os &#8250; render topology</samp>
+<samp>~/danish.os &#8250; trace request --follow</samp>
 
-Skills, arranged the way they actually run — as one path from the interface a
-person touches down to the infrastructure that keeps it alive. Expand any layer
-for the full toolset.
+Watch one request make the whole trip — interface to data and back, with the
+platform it all runs on underneath. Then open any layer for the full toolset.
 
-<img src="assets/architecture-map.svg" width="100%" alt="Layered architecture diagram. Interface: React, Tailwind, ShadCN, Framer Motion. Application: JavaScript, Redux, component systems. API and services: Django, DRF, FastAPI, WebSockets. Data: PostgreSQL, MongoDB, Django ORM. Infrastructure: AWS, Docker, Kubernetes, CI/CD. Design and systems: Figma, system design, database design.">
+<img src="assets/architecture-flow.svg" width="100%" alt="Animated architecture diagram. A request packet travels from User through React interface, Redux state, API gateway, Django and FastAPI services, to PostgreSQL and MongoDB, and a response returns. Below, a runtime platform bar shows Docker, Kubernetes and AWS with status lights.">
 
 <details>
-<summary><b>01 · Interface</b> — what people see and touch</summary>
+<summary><b>&#9656; Inspect Interface Layer</b> — what people see and touch</summary>
 
 | Tool | Role |
 |------|------|
 | React | Component-driven UIs |
+| JavaScript | The language the client speaks |
+| Redux | Predictable shared state |
 | Tailwind CSS | Utility-first styling |
 | ShadCN | Accessible component primitives |
 | Framer Motion | Motion and micro-interactions |
-| HTML / CSS | The foundation everything sits on |
-| Bootstrap | Fast, conventional layouts |
+| Figma | Design before build |
 
 </details>
 
 <details>
-<summary><b>02 · Application</b> — client logic and state</summary>
-
-| Tool | Role |
-|------|------|
-| JavaScript | The language the client speaks |
-| Redux | Predictable shared state |
-| Component systems | Reusable, composable UI structure |
-
-</details>
-
-<details>
-<summary><b>03 · API &amp; Services</b> — contracts between systems</summary>
+<summary><b>&#9656; Inspect API Layer</b> — contracts between systems</summary>
 
 | Tool | Role |
 |------|------|
@@ -102,7 +98,7 @@ for the full toolset.
 </details>
 
 <details>
-<summary><b>04 · Data</b> — persistence and integrity</summary>
+<summary><b>&#9656; Inspect Data Layer</b> — persistence and integrity</summary>
 
 | Tool | Role |
 |------|------|
@@ -114,7 +110,7 @@ for the full toolset.
 </details>
 
 <details>
-<summary><b>05 · Infrastructure</b> — ship, run, observe</summary>
+<summary><b>&#9656; Inspect Infrastructure Layer</b> — ship, run, observe</summary>
 
 | Tool | Role |
 |------|------|
@@ -122,17 +118,7 @@ for the full toolset.
 | Docker | Reproducible environments |
 | Kubernetes | Orchestration at scale |
 | Git | Version control and CI triggers |
-
-</details>
-
-<details>
-<summary><b>06 · Design &amp; Systems</b> — plan before build</summary>
-
-| Tool | Role |
-|------|------|
-| Figma | Interface design and prototyping |
 | System design | How the pieces fit and fail |
-| Data structures | The reasoning underneath the code |
 
 </details>
 
@@ -142,66 +128,71 @@ for the full toolset.
 
 <samp>~/danish.os &#8250; process.list --running</samp>
 
-> **Placeholders — edit the text between the markers in `README.md`.**
-
 | PID | Process | State |
 |----:|---------|-------|
-| 001 | <!-- CURRENT-BUILD -->Building a full-stack operations tool — FastAPI services with a React front end<!-- /CURRENT-BUILD --> | `running` |
-| 002 | <!-- CURRENT-LEARN -->Going deeper on system design, API contracts, and scaling data<!-- /CURRENT-LEARN --> | `running` |
-| 003 | <!-- CURRENT-FOCUS -->Deployment pipelines, data integrity, and clear failure states<!-- /CURRENT-FOCUS --> | `running` |
+| 001 | <!-- CURRENT-BUILD -->A full-stack operations tool — FastAPI services with a React front end<!-- /CURRENT-BUILD --> | `running` |
+| 002 | <!-- CURRENT-LEARN -->Deeper system design, API contracts, and scaling data<!-- /CURRENT-LEARN --> | `running` |
+| 003 | <!-- CURRENT-FOCUS -->Reliable APIs, deployment systems, and product engineering<!-- /CURRENT-FOCUS --> | `running` |
 
-### Latest from the notebook
-
-<!-- BLOG:START -->
-- [From Docker Despair to Deployment Success: A Complete Guide to Dockerizing and Deploying a Django…](https://medium.com/@danish_muhd/from-docker-despair-to-deployment-success-a-complete-guide-to-dockerizing-and-deploying-a-django-1285f169ceb7)
-<!-- BLOG:END -->
-
-<sub><!-- REFRESH:START -->
-`DANISH.OS v1.0.0 · last refresh 2026-07-26`
-<!-- REFRESH:END --></sub>
+<sub>These lines are driven by <code>profile-data.yml</code> — edit the file, not the table.</sub>
 
 ---
 
-## Build Logs
+## Deployment Pipeline
 
-<samp>~/danish.os &#8250; tail build.log</samp>
+<samp>~/danish.os &#8250; watch pipeline</samp>
 
-> **Templates — swap in three or four real repositories.** The structure is
-> ready; replace the names, links, and results with true ones. Don't ship a
-> result number until it's real.
+<img src="assets/deployment-pipeline.svg" width="100%" alt="Animated deployment pipeline: code, git, github, ci, image, kubernetes, production. A signal moves through each stage; notes appear reading commit accepted, tests passed, image built, deployment healthy.">
+
+How I ship, in three sentences: small changes, merged often, deployed the same
+way every time. The pipeline is code too — versioned, reviewed, and boring on
+purpose. If a failure can happen, I'd rather it happen loudly in CI than
+quietly in production.
+
+---
+
+## Repository Galaxy
+
+<samp>~/danish.os &#8250; scan orbit</samp>
+
+<img src="assets/repository-galaxy.svg" width="100%" alt="An orbit map: a central DANISH.OS core surrounded by dashed rings, with four satellite modules currently labeled as placeholder projects 01 to 04, each with a pulsing status dot.">
+
+> **Placeholder satellites** — real repositories dock here via
+> `featured_projects` in `profile-data.yml`. The build logs below follow the
+> same rule: structure now, real names and results when they're true.
 
 <details>
-<summary><b>build.log[01]</b> — Realtime operations dashboard <em>(replace)</em></summary>
+<summary><b>&#9656; Open build.log[01]</b> — Realtime operations dashboard <em>(replace)</em></summary>
 
 - **Problem** — Teams were tracking work across spreadsheets and messages, with no single source of truth.
 - **Approach** — A service-backed dashboard with WebSocket updates and an append-only activity log, so every change has an actor and a timestamp.
 - **Stack** — React · Redux · FastAPI · PostgreSQL · Docker
 - **Architecture note** — State lives server-side and streams to clients; the UI never guesses what's true.
-- **Result** — <!-- Add a real, measured result. Leave blank until it's true. --> _measurable result — to be filled in_
+- **Result** — _measurable result — to be filled in_
 - **Links** — [repository](https://github.com/danish-kv?tab=repositories) · [demo](#)
 
 </details>
 
 <details>
-<summary><b>build.log[02]</b> — Content / API platform <em>(replace)</em></summary>
+<summary><b>&#9656; Open build.log[02]</b> — Content / API platform <em>(replace)</em></summary>
 
 - **Problem** — A product needed a clean, versioned API that a web client and third parties could both depend on.
 - **Approach** — Django + DRF with explicit serializers, permissions, and a versioned URL scheme designed around real workflows rather than raw tables.
 - **Stack** — Django · Django REST Framework · PostgreSQL · Redis-ready
 - **Architecture note** — The API contract came first; the database schema followed the workflow, not the other way around.
-- **Result** — <!-- Add a real, measured result. --> _measurable result — to be filled in_
+- **Result** — _measurable result — to be filled in_
 - **Links** — [repository](https://github.com/danish-kv?tab=repositories) · [demo](#)
 
 </details>
 
 <details>
-<summary><b>build.log[03]</b> — Full-stack product build <em>(replace)</em></summary>
+<summary><b>&#9656; Open build.log[03]</b> — Full-stack product build <em>(replace)</em></summary>
 
 - **Problem** — An idea that needed to become a usable product across interface, API, and deployment.
 - **Approach** — React + Tailwind on the front, a typed backend, containerised and shipped to the cloud with a repeatable pipeline.
 - **Stack** — React · Tailwind · FastAPI · Docker · AWS
-- **Architecture note** — Treated deployment as part of the build from day one, so "it works on my machine" never became a stage.
-- **Result** — <!-- Add a real, measured result. --> _measurable result — to be filled in_
+- **Architecture note** — Deployment was part of the build from day one, so "it works on my machine" never became a stage.
+- **Result** — _measurable result — to be filled in_
 - **Links** — [repository](https://github.com/danish-kv?tab=repositories) · [demo](#)
 
 </details>
@@ -221,11 +212,23 @@ for the full toolset.
 
 ---
 
+## Latest Writing
+
+<samp>~/danish.os &#8250; fetch notebook --latest</samp>
+
+<!-- BLOG:START -->
+- [From Docker Despair to Deployment Success: A Complete Guide to Dockerizing and Deploying a Django…](https://medium.com/@danish_muhd/from-docker-despair-to-deployment-success-a-complete-guide-to-dockerizing-and-deploying-a-django-1285f169ceb7)
+<!-- BLOG:END -->
+
+More on [Medium &#8594;](https://medium.com/@danish_muhd/)
+
+---
+
 ## Telemetry
 
-<samp>~/danish.os &#8250; stat --github</samp>
+<samp>~/danish.os &#8250; stat --system --github</samp>
 
-Numbers, not narrative. If a card fails to load, nothing below it breaks.
+<img src="assets/telemetry.svg" width="100%" alt="Decorative telemetry panel: runtime full_stack, mode curious, focus shipping, state building, signal stable, with animated bars, a pulsing activity grid and a scrolling waveform. A caption notes it is visual storytelling, not analytics.">
 
 <div align="center">
 
@@ -238,26 +241,20 @@ Numbers, not narrative. If a card fails to load, nothing below it breaks.
 
 </div>
 
+<sub>If a card above fails to load, nothing below it breaks.</sub>
+
 ---
 
 ## Developer Console
 
-<samp>~/danish.os &#8250; sudo open console</samp>
+<samp>~/danish.os &#8250; open console --replay</samp>
+
+<img src="assets/live-console.svg" width="100%" alt="An animated console session. whoami answers Muhammed Danish; role answers full-stack systems builder; current_focus answers reliable APIs, deployment systems and product engineering; philosophy answers build systems, not isolated screens; status answers available for meaningful collaboration. A cursor blinks at the prompt.">
 
 <details>
-<summary><b>Open the developer console</b> — a few things the dashboards don't show</summary>
+<summary><b>&#9656; View hidden system notes</b> — what the dashboards don't show</summary>
 
 <br>
-
-**Current system state**
-
-```text
-$ danish.os --status
-uptime .............. still curious
-open_tabs ........... too many, closing none
-current_process ..... turning ideas into dependable systems
-coffee .............. optional; understanding is not
-```
 
 **Debugging philosophy** — Reproduce it before you fix it. A bug you can't
 reproduce isn't fixed, it's just hiding. Read the error message twice; it's
@@ -265,18 +262,62 @@ usually telling the truth.
 
 **Favourite kind of problem** — The ones at the seams: where the frontend's
 assumptions meet the backend's reality, where a schema meets real data, where
-"works locally" meets "works deployed." That's where the interesting bugs and
-the interesting designs both live.
+"works locally" meets "works deployed."
 
 **Human side** — I like understanding how things work more than I like being
-told. I learn by building the thing and taking it apart. I read and take part
-in technical discussions because a good argument teaches faster than a tutorial.
+told. I learn by building the thing and taking it apart.
 
 **This week's note**
 
 <!-- NOTE:START -->
 > A system that fails silently can't be trusted. Make failure loud.
 <!-- NOTE:END -->
+
+</details>
+
+---
+
+## Root Access
+
+<samp>~/danish.os &#8250; sudo -i</samp>
+
+<details>
+<summary><b>&#9656; Request root access</b></summary>
+
+<br>
+
+```text
+$ sudo inspect danish-os
+password: ********
+access granted — welcome to ring 0
+```
+
+<details>
+<summary><b>&#9656; /root/engineering.notes</b></summary>
+
+<br>
+
+- **Problems I keep coming back to** — allocation and ordering problems: which
+  unit goes to which order, what happens when two things claim the same
+  resource, and how a queue should behave when the world changes under it.
+- **What I care about when building** — that the failure states are designed,
+  not discovered. Happy paths write themselves; the sad paths are the work.
+- **One human detail** — I'll take a whiteboard argument about schema design
+  over most forms of entertainment.
+
+</details>
+
+<details>
+<summary><b>&#9656; /root/message.txt</b></summary>
+
+<br>
+
+> You clicked through two layers of a fake filesystem to read a hidden note.
+> That's exactly the kind of curiosity this whole page is betting on.
+> Systems reward the people who look one level deeper — so do careers.
+> Say hi: the [connection port](#connection-port) is right below.
+
+</details>
 
 </details>
 
@@ -295,9 +336,12 @@ be shaped — I'm glad to talk. Best ways in:
 <!-- Add a direct email line here when you decide which address to publish:
 - **Direct line** — [email](mailto:you@example.com) -->
 
-
 <div align="center">
 <sub>DANISH.OS &#183; designing the path from interface to infrastructure</sub>
+<br>
+<sub><!-- REFRESH:START -->
+`DANISH.OS v1.1.0 · last refresh 2026-07-26`
+<!-- REFRESH:END --></sub>
 </div>
 
-<!-- end of line. if you read this far, you're exactly the kind of person this was built for. -->
+<!-- end of line. the boot bar says 100%, but the boot never really finishes. neither does the work. -->

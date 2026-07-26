@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Telemetry — deliberately fictional, clearly-labeled visual storytelling.
+  No real metrics, percentages, counts or analytics are shown or implied.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 330" width="100%" role="img" aria-labelledby="telTitle telDesc" preserveAspectRatio="xMidYMid meet">
+  <title id="telTitle">DANISH.OS telemetry — decorative system readout</title>
+  <desc id="telDesc">A decorative dashboard. Metric rows read runtime full_stack, mode curious, focus shipping, state building, signal stable, each with a filled bar. A grid of activity dots pulses in a gentle wave, and a small waveform scrolls continuously. A caption notes this is visual storytelling, not analytics.</desc>
+
+  <defs>
+    <style>
+      .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif; }
+      .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", "Cascadia Code", "Fira Code", Menlo, Consolas, monospace; }
+      .fg { fill: #E6EDF3; } .muted { fill: #8B949E; } .dim { fill: #6E7681; } .accent { fill: #E9A23B; }
+
+      @keyframes fillb { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+      @keyframes dotp { 0%, 100% { opacity: .12; } 50% { opacity: .7; } }
+      @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-150px); } }
+      @keyframes pulse { 0%, 100% { opacity: .3; } 50% { opacity: 1; } }
+
+      .bar { transform-box: fill-box; transform-origin: 0 50%; animation: fillb 1.2s ease-in-out both; }
+      .m1 { animation-delay: .2s; } .m2 { animation-delay: .35s; } .m3 { animation-delay: .5s; }
+      .m4 { animation-delay: .65s; } .m5 { animation-delay: .8s; }
+      .dot { animation: dotp 3.2s ease-in-out infinite both; }
+      .d0{animation-delay:0s}.d1{animation-delay:.18s}.d2{animation-delay:.36s}.d3{animation-delay:.54s}
+      .d4{animation-delay:.72s}.d5{animation-delay:.9s}.d6{animation-delay:1.08s}.d7{animation-delay:1.26s}
+      .d8{animation-delay:1.44s}.d9{animation-delay:1.62s}.d10{animation-delay:1.8s}.d11{animation-delay:1.98s}
+      .wave { animation: scroll 3.5s linear infinite; }
+      .live { animation: pulse 2.6s ease-in-out infinite; }
+
+      @media (prefers-reduced-motion: reduce) {
+        .bar,.m1,.m2,.m3,.m4,.m5,.wave,.live { animation: none; }
+        .dot,.d0,.d1,.d2,.d3,.d4,.d5,.d6,.d7,.d8,.d9,.d10,.d11 { animation: none; opacity: .4; }
+      }
+    </style>
+  </defs>
+
+  <rect x="6" y="6" width="1188" height="318" rx="20" fill="#0D1117" stroke="#2A313C" stroke-width="1.5"/>
+
+  <text x="40" y="48" class="sans fg" font-size="21" font-weight="700">Telemetry</text>
+  <text x="40" y="72" class="mono muted" font-size="12">system readout &#183; not a benchmark in sight</text>
+  <circle cx="1104" cy="43" r="4" class="accent live"/>
+  <text x="1160" y="47" class="mono dim" font-size="11" text-anchor="end">nominal</text>
+
+  <!-- metric rows -->
+  <g class="mono" font-size="13">
+    <text x="64" y="125" class="dim">runtime</text><text x="200" y="125" class="fg">full_stack</text>
+    <rect x="380" y="116" width="150" height="8" rx="4" fill="#21262D"/>
+    <rect x="380" y="116" width="135" height="8" rx="4" class="accent bar m1"/>
+
+    <text x="64" y="161" class="dim">mode</text><text x="200" y="161" class="fg">curious</text>
+    <rect x="380" y="152" width="150" height="8" rx="4" fill="#21262D"/>
+    <rect x="380" y="152" width="112" height="8" rx="4" class="accent bar m2"/>
+
+    <text x="64" y="197" class="dim">focus</text><text x="200" y="197" class="fg">shipping</text>
+    <rect x="380" y="188" width="150" height="8" rx="4" fill="#21262D"/>
+    <rect x="380" y="188" width="127" height="8" rx="4" class="accent bar m3"/>
+
+    <text x="64" y="233" class="dim">state</text><text x="200" y="233" class="accent">building</text>
+    <rect x="380" y="224" width="150" height="8" rx="4" fill="#21262D"/>
+    <rect x="380" y="224" width="120" height="8" rx="4" class="accent bar m4"/>
+
+    <text x="64" y="269" class="dim">signal</text><text x="200" y="269" class="fg">stable</text>
+    <rect x="380" y="260" width="150" height="8" rx="4" fill="#21262D"/>
+    <rect x="380" y="260" width="142" height="8" rx="4" class="accent bar m5"/>
+  </g>
+
+  <!-- activity dot grid: columns pulse in a left-to-right wave -->
+  <text x="606" y="112" class="mono dim" font-size="11">activity &#8212; always ticking</text>
+  <g fill="#E9A23B">
+    <g>
+      <circle cx="612" cy="140" r="3" class="dot d0"/><circle cx="630" cy="140" r="3" class="dot d1"/><circle cx="648" cy="140" r="3" class="dot d2"/><circle cx="666" cy="140" r="3" class="dot d3"/><circle cx="684" cy="140" r="3" class="dot d4"/><circle cx="702" cy="140" r="3" class="dot d5"/><circle cx="720" cy="140" r="3" class="dot d6"/><circle cx="738" cy="140" r="3" class="dot d7"/><circle cx="756" cy="140" r="3" class="dot d8"/><circle cx="774" cy="140" r="3" class="dot d9"/><circle cx="792" cy="140" r="3" class="dot d10"/><circle cx="810" cy="140" r="3" class="dot d11"/>
+    </g>
+    <g>
+      <circle cx="612" cy="166" r="3" class="dot d1"/><circle cx="630" cy="166" r="3" class="dot d2"/><circle cx="648" cy="166" r="3" class="dot d3"/><circle cx="666" cy="166" r="3" class="dot d4"/><circle cx="684" cy="166" r="3" class="dot d5"/><circle cx="702" cy="166" r="3" class="dot d6"/><circle cx="720" cy="166" r="3" class="dot d7"/><circle cx="738" cy="166" r="3" class="dot d8"/><circle cx="756" cy="166" r="3" class="dot d9"/><circle cx="774" cy="166" r="3" class="dot d10"/><circle cx="792" cy="166" r="3" class="dot d11"/><circle cx="810" cy="166" r="3" class="dot d0"/>
+    </g>
+    <g>
+      <circle cx="612" cy="192" r="3" class="dot d2"/><circle cx="630" cy="192" r="3" class="dot d3"/><circle cx="648" cy="192" r="3" class="dot d4"/><circle cx="666" cy="192" r="3" class="dot d5"/><circle cx="684" cy="192" r="3" class="dot d6"/><circle cx="702" cy="192" r="3" class="dot d7"/><circle cx="720" cy="192" r="3" class="dot d8"/><circle cx="738" cy="192" r="3" class="dot d9"/><circle cx="756" cy="192" r="3" class="dot d10"/><circle cx="774" cy="192" r="3" class="dot d11"/><circle cx="792" cy="192" r="3" class="dot d0"/><circle cx="810" cy="192" r="3" class="dot d1"/>
+    </g>
+    <g>
+      <circle cx="612" cy="218" r="3" class="dot d3"/><circle cx="630" cy="218" r="3" class="dot d4"/><circle cx="648" cy="218" r="3" class="dot d5"/><circle cx="666" cy="218" r="3" class="dot d6"/><circle cx="684" cy="218" r="3" class="dot d7"/><circle cx="702" cy="218" r="3" class="dot d8"/><circle cx="720" cy="218" r="3" class="dot d9"/><circle cx="738" cy="218" r="3" class="dot d10"/><circle cx="756" cy="218" r="3" class="dot d11"/><circle cx="774" cy="218" r="3" class="dot d0"/><circle cx="792" cy="218" r="3" class="dot d1"/><circle cx="810" cy="218" r="3" class="dot d2"/>
+    </g>
+    <g>
+      <circle cx="612" cy="244" r="3" class="dot d4"/><circle cx="630" cy="244" r="3" class="dot d5"/><circle cx="648" cy="244" r="3" class="dot d6"/><circle cx="666" cy="244" r="3" class="dot d7"/><circle cx="684" cy="244" r="3" class="dot d8"/><circle cx="702" cy="244" r="3" class="dot d9"/><circle cx="720" cy="244" r="3" class="dot d10"/><circle cx="738" cy="244" r="3" class="dot d11"/><circle cx="756" cy="244" r="3" class="dot d0"/><circle cx="774" cy="244" r="3" class="dot d1"/><circle cx="792" cy="244" r="3" class="dot d2"/><circle cx="810" cy="244" r="3" class="dot d3"/>
+    </g>
+  </g>
+
+  <!-- scrolling waveform -->
+  <text x="876" y="112" class="mono dim" font-size="11">signal &#8212; stable</text>
+  <rect x="876" y="124" width="284" height="136" rx="12" fill="#11161D" stroke="#2A313C"/>
+  <clipPath id="waveClip"><rect x="888" y="136" width="260" height="112" rx="8"/></clipPath>
+  <g clip-path="url(#waveClip)">
+    <g class="wave">
+      <path d="M888,192 C903,162 918,222 933,192 C948,162 963,222 978,192 C993,162 1008,222 1023,192 C1038,162 1053,222 1068,192 C1083,162 1098,222 1113,192 C1128,162 1143,222 1158,192 C1173,162 1188,222 1203,192 C1218,162 1233,222 1248,192 C1263,162 1278,222 1293,192"
+            fill="none" stroke="#E9A23B" stroke-width="2"/>
+      <path d="M888,196 C903,176 918,216 933,196 C948,176 963,216 978,196 C993,176 1008,216 1023,196 C1038,176 1053,216 1068,196 C1083,176 1098,216 1113,196 C1128,176 1143,216 1158,196 C1173,176 1188,216 1203,196 C1218,176 1233,216 1248,196 C1263,176 1278,216 1293,196"
+            fill="none" stroke="#39424E" stroke-width="2"/>
+    </g>
+  </g>
+
+  <text x="40" y="304" class="mono dim" font-size="11">decorative telemetry &#183; visual storytelling, not analytics &#8212; the real numbers live in the repositories</text>
+</svg>

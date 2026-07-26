@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 270" width="100%" role="img" aria-labelledby="pipeTitle pipeDesc" preserveAspectRatio="xMidYMid meet">
+  <title id="pipeTitle">DANISH.OS deployment pipeline — code to production</title>
+  <desc id="pipeDesc">A pipeline of seven stages: code, git, github, ci, image, kubernetes, production. An animated signal moves through every stage; each stage lights up as it passes, and status notes appear: commit accepted, tests passed, image built, deployment healthy.</desc>
+
+  <defs>
+    <style>
+      .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif; }
+      .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", "Cascadia Code", "Fira Code", Menlo, Consolas, monospace; }
+      .fg { fill: #E6EDF3; } .muted { fill: #8B949E; } .dim { fill: #6E7681; } .accent { fill: #E9A23B; }
+
+      @keyframes sig {
+        0% { transform: translateX(0); opacity: 0; } 4% { transform: translateX(0); opacity: 1; }
+        15% { transform: translateX(157px); } 17% { transform: translateX(157px); }
+        28% { transform: translateX(314px); } 30% { transform: translateX(314px); }
+        41% { transform: translateX(471px); } 43% { transform: translateX(471px); }
+        54% { transform: translateX(628px); } 56% { transform: translateX(628px); }
+        67% { transform: translateX(785px); } 69% { transform: translateX(785px); }
+        80% { transform: translateX(942px); } 86% { transform: translateX(942px); opacity: 1; }
+        92% { opacity: 0; } 100% { transform: translateX(942px); opacity: 0; }
+      }
+      @keyframes flash { 0% { opacity: 0; } 2% { opacity: 1; } 12% { opacity: 0; } 100% { opacity: 0; } }
+      @keyframes evt { 0% { opacity: 0; } 3% { opacity: 1; } 30% { opacity: 1; } 38% { opacity: 0; } 100% { opacity: 0; } }
+      @keyframes pulse { 0%, 100% { opacity: .3; } 50% { opacity: 1; } }
+
+      .sig { transform-box: fill-box; animation: sig 9s linear .8s infinite; opacity: 0; }
+      .hl  { opacity: 0; animation: flash 9s linear infinite; }
+      .k0 { animation-delay: 1.16s; } .k1 { animation-delay: 2.33s; } .k2 { animation-delay: 3.5s; }
+      .k3 { animation-delay: 4.67s; } .k4 { animation-delay: 5.84s; } .k5 { animation-delay: 7.01s; }
+      .k6 { animation-delay: 8.18s; }
+      .ev { animation: evt 9s linear infinite both; }
+      .e1 { animation-delay: 2.5s; } .e3 { animation-delay: 4.85s; } .e4 { animation-delay: 6.0s; } .e6 { animation-delay: 8.3s; }
+      .live { animation: pulse 2.6s ease-in-out infinite; }
+
+      @media (prefers-reduced-motion: reduce) {
+        .sig, .hl, .ev, .live { animation: none; }
+        .sig, .hl { opacity: 0; }
+      }
+    </style>
+  </defs>
+
+  <rect x="6" y="6" width="1188" height="258" rx="20" fill="#0D1117" stroke="#2A313C" stroke-width="1.5"/>
+
+  <text x="40" y="48" class="sans fg" font-size="21" font-weight="700">Deployment Pipeline</text>
+  <text x="40" y="72" class="mono muted" font-size="12">shipping is part of the build</text>
+  <circle cx="1108" cy="43" r="4" class="accent live"/>
+  <text x="1160" y="47" class="mono dim" font-size="11" text-anchor="end">continuous</text>
+
+  <!-- rail + signal -->
+  <line x1="129" y1="136" x2="1071" y2="136" stroke="#2A313C" stroke-width="2"/>
+  <circle cx="129" cy="136" r="5" class="accent sig"/>
+
+  <!-- stages -->
+  <g class="sans" font-size="14" font-weight="600" text-anchor="middle">
+    <rect x="64"   y="110" width="130" height="52" rx="11" fill="#11161D" stroke="#2A313C"/>
+    <rect x="64"   y="110" width="130" height="52" rx="11" fill="none" stroke="#E9A23B" stroke-width="1.5" class="hl k0"/>
+    <text x="129"  y="132" class="fg">code</text><text x="129" y="150" class="mono dim" font-size="10" font-weight="400">write</text>
+
+    <rect x="221"  y="110" width="130" height="52" rx="11" fill="#11161D" stroke="#2A313C"/>
+    <rect x="221"  y="110" width="130" height="52" rx="11" fill="none" stroke="#E9A23B" stroke-width="1.5" class="hl k1"/>
+    <text x="286"  y="132" class="fg">git</text><text x="286" y="150" class="mono dim" font-size="10" font-weight="400">commit</text>
+
+    <rect x="378"  y="110" width="130" height="52" rx="11" fill="#11161D" stroke="#2A313C"/>
+    <rect x="378"  y="110" width="130" height="52" rx="11" fill="none" stroke="#E9A23B" stroke-width="1.5" class="hl k2"/>
+    <text x="443"  y="132" class="fg">github</text><text x="443" y="150" class="mono dim" font-size="10" font-weight="400">push</text>
+
+    <rect x="535"  y="110" width="130" height="52" rx="11" fill="#11161D" stroke="#2A313C"/>
+    <rect x="535"  y="110" width="130" height="52" rx="11" fill="none" stroke="#E9A23B" stroke-width="1.5" class="hl k3"/>
+    <text x="600"  y="132" class="fg">ci</text><text x="600" y="150" class="mono dim" font-size="10" font-weight="400">test</text>
+
+    <rect x="692"  y="110" width="130" height="52" rx="11" fill="#11161D" stroke="#2A313C"/>
+    <rect x="692"  y="110" width="130" height="52" rx="11" fill="none" stroke="#E9A23B" stroke-width="1.5" class="hl k4"/>
+    <text x="757"  y="132" class="fg">image</text><text x="757" y="150" class="mono dim" font-size="10" font-weight="400">build</text>
+
+    <rect x="849"  y="110" width="130" height="52" rx="11" fill="#11161D" stroke="#2A313C"/>
+    <rect x="849"  y="110" width="130" height="52" rx="11" fill="none" stroke="#E9A23B" stroke-width="1.5" class="hl k5"/>
+    <text x="914"  y="132" class="fg">k8s</text><text x="914" y="150" class="mono dim" font-size="10" font-weight="400">rollout</text>
+
+    <rect x="1006" y="110" width="130" height="52" rx="11" fill="#11161D" stroke="#2A313C"/>
+    <rect x="1006" y="110" width="130" height="52" rx="11" fill="none" stroke="#E9A23B" stroke-width="1.5" class="hl k6"/>
+    <text x="1071" y="132" class="fg">prod</text><text x="1071" y="150" class="mono dim" font-size="10" font-weight="400">live</text>
+  </g>
+
+  <!-- event notes -->
+  <g class="mono" font-size="12" text-anchor="middle">
+    <text x="286"  y="200" class="muted ev e1"><tspan class="accent">&#10003;</tspan> commit accepted</text>
+    <text x="600"  y="200" class="muted ev e3"><tspan class="accent">&#10003;</tspan> tests passed</text>
+    <text x="757"  y="226" class="muted ev e4"><tspan class="accent">&#10003;</tspan> image built</text>
+    <text x="1071" y="200" class="muted ev e6"><tspan class="accent">&#10003;</tspan> deployment healthy</text>
+  </g>
+
+  <text x="40" y="238" class="mono dim" font-size="11">merge &#8594; production, the boring way &#8212; small steps, loud failures, easy rollbacks</text>
+</svg>

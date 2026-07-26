@@ -7,7 +7,7 @@ on:
     - cron: "0 6 * * 1"
   workflow_dispatch: {}
 
-# Least privilege: the job only needs to write back to this repo.
+# Least privilege: the job only needs to write back to this repo. No secrets.
 permissions:
   contents: write
 
@@ -30,8 +30,8 @@ jobs:
       - name: Install pinned dependencies
         run: pip install "PyYAML==6.0.2"
 
-      - name: Refresh README
-        run: python scripts/update_profile.py
+      - name: Regenerate profile
+        run: python scripts/generate_profile_assets.py
 
       - name: Commit if changed
         run: |
@@ -41,6 +41,6 @@ jobs:
           fi
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md
+          git add README.md assets/live-console.svg assets/repository-galaxy.svg
           git commit -m "chore: refresh profile [skip ci]"
           git push

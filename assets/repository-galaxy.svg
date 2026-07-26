@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Repository Galaxy — featured systems orbiting the DANISH.OS core.
+  PLACEHOLDERS: the four satellites are PROJECT_01..04. Replace them either by
+  editing the tspans with ids proj-1..4 / projsub-1..4 below, or by setting
+  featured_projects in profile-data.yml and running scripts/generate_profile_assets.py.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="100%" role="img" aria-labelledby="galTitle galDesc" preserveAspectRatio="xMidYMid meet">
+  <title id="galTitle">DANISH.OS repository galaxy — featured systems in orbit</title>
+  <desc id="galDesc">An orbit map. A central core labeled DANISH.OS is surrounded by dashed orbit rings. Four satellite modules, currently placeholders named project 01 to 04, float on the rings, each with a pulsing status dot. Rings rotate slowly.</desc>
+
+  <defs>
+    <style>
+      .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif; }
+      .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", "Cascadia Code", "Fira Code", Menlo, Consolas, monospace; }
+      .fg { fill: #E6EDF3; } .muted { fill: #8B949E; } .dim { fill: #6E7681; } .accent { fill: #E9A23B; }
+
+      @keyframes spin  { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+      @keyframes spinr { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
+      @keyframes bob   { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+      @keyframes ripple { from { transform: scale(1); opacity: .45; } to { transform: scale(1.6); opacity: 0; } }
+      @keyframes pulse { 0%, 100% { opacity: .3; } 50% { opacity: 1; } }
+
+      .ringA { transform-origin: 600px 290px; animation: spin 90s linear infinite; }
+      .ringB { transform-origin: 600px 290px; animation: spinr 130s linear infinite; }
+      .rip { transform-origin: 600px 290px; animation: ripple 3.6s ease-out infinite; }
+      .sat { transform-box: fill-box; animation: bob 6s ease-in-out infinite; }
+      .s2 { animation-duration: 7.2s; animation-delay: .8s; }
+      .s3 { animation-duration: 8s;   animation-delay: 1.6s; }
+      .s4 { animation-duration: 6.6s; animation-delay: 2.4s; }
+      .live { animation: pulse 2.8s ease-in-out infinite; }
+      .p2 { animation-delay: .7s; } .p3 { animation-delay: 1.4s; } .p4 { animation-delay: 2.1s; }
+
+      @media (prefers-reduced-motion: reduce) {
+        .ringA, .ringB, .rip, .sat, .s2, .s3, .s4, .live, .p2, .p3, .p4 { animation: none; }
+        .rip { opacity: 0; }
+      }
+    </style>
+    <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#E9A23B" stop-opacity=".22"/><stop offset="1" stop-color="#E9A23B" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect x="6" y="6" width="1188" height="548" rx="20" fill="#0D1117" stroke="#2A313C" stroke-width="1.5"/>
+
+  <text x="40" y="48" class="sans fg" font-size="21" font-weight="700">Repository Galaxy</text>
+  <text x="40" y="72" class="mono muted" font-size="12">featured systems in orbit around the core</text>
+  <text x="1160" y="48" class="mono dim" font-size="12" text-anchor="end">danish.os / orbit</text>
+
+  <!-- orbit rings -->
+  <g fill="none" stroke="#2A313C" stroke-width="1">
+    <circle cx="600" cy="290" r="110" stroke-dasharray="2 6" class="ringA"/>
+    <circle cx="600" cy="290" r="170" stroke-dasharray="2 8"/>
+    <circle cx="600" cy="290" r="230" stroke-dasharray="2 6" class="ringB"/>
+    <circle cx="600" cy="290" r="288" stroke-dasharray="1 9" opacity=".7"/>
+  </g>
+
+  <!-- core -->
+  <circle cx="600" cy="290" r="86" fill="url(#coreGlow)"/>
+  <circle cx="600" cy="290" r="56" fill="none" stroke="#E9A23B" stroke-width="1" class="rip"/>
+  <circle cx="600" cy="290" r="56" fill="#11161D" stroke="#E9A23B" stroke-width="1.5"/>
+  <text x="600" y="286" class="sans" font-size="15" font-weight="700" text-anchor="middle"><tspan class="fg">DANISH</tspan><tspan class="accent">.OS</tspan></text>
+  <text x="600" y="306" class="mono dim" font-size="10" text-anchor="middle">core.sys</text>
+
+  <!-- satellites (replace PROJECT_01..04 — see comment at top) -->
+  <g class="sat">
+    <rect x="654" y="169" width="180" height="48" rx="12" fill="#11161D" stroke="#2A313C"/>
+    <circle cx="676" cy="193" r="4" class="accent live"/>
+    <text x="690" y="189" class="mono fg" font-size="13"><tspan id="proj-1">PROJECT_01</tspan></text>
+    <text x="690" y="206" class="mono dim" font-size="10"><tspan id="projsub-1">swap in a real repo</tspan></text>
+  </g>
+  <g class="sat s2">
+    <rect x="723" y="363" width="180" height="48" rx="12" fill="#11161D" stroke="#2A313C"/>
+    <circle cx="745" cy="387" r="4" class="accent live p2"/>
+    <text x="759" y="383" class="mono fg" font-size="13"><tspan id="proj-2">PROJECT_02</tspan></text>
+    <text x="759" y="400" class="mono dim" font-size="10"><tspan id="projsub-2">swap in a real repo</tspan></text>
+  </g>
+  <g class="sat s3">
+    <rect x="280" y="344" width="180" height="48" rx="12" fill="#11161D" stroke="#2A313C"/>
+    <circle cx="302" cy="368" r="4" class="accent live p3"/>
+    <text x="316" y="364" class="mono fg" font-size="13"><tspan id="proj-3">PROJECT_03</tspan></text>
+    <text x="316" y="381" class="mono dim" font-size="10"><tspan id="projsub-3">swap in a real repo</tspan></text>
+  </g>
+  <g class="sat s4">
+    <rect x="343" y="186" width="180" height="48" rx="12" fill="#11161D" stroke="#2A313C"/>
+    <circle cx="365" cy="210" r="4" class="accent live p4"/>
+    <text x="379" y="206" class="mono fg" font-size="13"><tspan id="proj-4">PROJECT_04</tspan></text>
+    <text x="379" y="223" class="mono dim" font-size="10"><tspan id="projsub-4">swap in a real repo</tspan></text>
+  </g>
+
+  <text x="40" y="528" class="mono dim" font-size="11">placeholder satellites &#8212; real systems dock here as they ship</text>
+  <text x="1160" y="528" class="mono dim" font-size="11" text-anchor="end">gravity = maintained code</text>
+</svg>
