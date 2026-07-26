@@ -38,6 +38,8 @@ README = ROOT / "README.md"
 DATA = ROOT / "profile-data.yml"
 CONSOLE_SVG = ROOT / "assets" / "live-console.svg"
 GALAXY_SVG = ROOT / "assets" / "repository-galaxy.svg"
+FETCH_SVG = ROOT / "assets" / "danish-fetch.svg"
+GH_USER = "danish-kv"
 
 USER_AGENT = "danish-os-profile-bot/1.1 (+https://github.com/danish-kv)"
 FEED_TIMEOUT = 15  # seconds
@@ -201,6 +203,77 @@ def update_galaxy(data: dict) -> bool:
     return False
 
 
+def gh_get(url: str, accept: str = "application/vnd.github+json"):
+    """GET a GitHub API URL, using GH_TOKEN in Actions to avoid rate limits."""
+    import json
+    import os
+
+    headers = {"User-Agent": USER_AGENT, "Accept": accept}
+    token = os.environ.get("GH_TOKEN")
+    if token:
+        headers["Authorization"] = f"Bearer {token}"
+    req = urllib.request.Request(url, headers=headers)
+    with urllib.request.urlopen(req, timeout=FEED_TIMEOUT) as resp:  # noqa: S310
+        return json.load(resp)
+
+
+def compute_uptime(birth_date: str | None) -> str | None:
+    """Andrew6rant-style uptime: 'X years, Y months, Z days' since birth_date."""
+    if not birth_date:
+        return None
+    born = dt.date.fromisoformat(str(birth_date))
+    today = dt.date.today()
+    years = today.year - born.year - ((today.month, today.day) < (born.month, born.day))
+    months = (today.month - born.month - (today.day < born.day)) % 12
+    # days since the most recent monthly anniversary
+    prev_month = today.month if today.day >= born.day else today.month - 1
+    prev_year = today.year
+    if prev_month < 1:
+        prev_month += 12
+        prev_year -= 1
+    try:
+        last_anniv = dt.date(prev_year, prev_month, born.day)
+    except ValueError:  # e.g. born on the 31st
+        last_anniv = dt.date(prev_year, prev_month, 28)
+    days = (today - last_anniv).days
+    return f"{years} years, {months} months, {days} days"
+
+
+def update_fetch(data: dict) -> bool:
+    """Refresh the danishfetch card: GitHub stats tspans + optional uptime.
+    Fails soft — on any API error the previous numbers stay."""
+    if not FETCH_SVG.exists():
+        return False
+    svg = FETCH_SVG.read_text(encoding="utf-8")
+    out = svg
+
+    uptime = compute_uptime(data.get("birth_date"))
+    if uptime:
+        out = inject_tspan(out, "up-time", check_len(uptime, 40, "computed uptime"))
+
+    try:
+        user = gh_get(f"https://api.github.com/users/{GH_USER}")
+        repos = gh_get(f"https://api.github.com/users/{GH_USER}/repos?per_page=100")
+        stars = sum(r.get("stargazers_count", 0) for r in repos)
+        out = inject_tspan(out, "st-repos", str(user["public_repos"]))
+        out = inject_tspan(out, "st-stars", str(stars))
+        out = inject_tspan(out, "st-followers", str(user["followers"]))
+        commits = gh_get(
+            f"https://api.github.com/search/commits?q=author:{GH_USER}",
+            accept="application/vnd.github.cloak-preview+json",
+        )["total_count"]
+        out = inject_tspan(out, "st-commits", str(commits))
+    except GenerationError:
+        raise
+    except Exception as exc:  # noqa: BLE001
+        print(f"fetch stats skipped, keeping previous numbers ({exc})", file=sys.stderr)
+
+    if out != svg:
+        FETCH_SVG.write_text(out, encoding="utf-8")
+        return True
+    return False
+
+
 # ------------------------------------------------------------------ main ---
 
 def main() -> int:
@@ -219,6 +292,8 @@ def main() -> int:
             changed.append("assets/live-console.svg")
         if update_galaxy(data):
             changed.append("assets/repository-galaxy.svg")
+        if update_fetch(data):
+            changed.append("assets/danish-fetch.svg")
     except GenerationError as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 1

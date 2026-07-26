@@ -31,6 +31,8 @@ jobs:
         run: pip install "PyYAML==6.0.2"
 
       - name: Regenerate profile
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/generate_profile_assets.py
 
       - name: Commit if changed
@@ -41,6 +43,6 @@ jobs:
           fi
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add README.md assets/live-console.svg assets/repository-galaxy.svg
+          git add README.md assets/live-console.svg assets/repository-galaxy.svg assets/danish-fetch.svg
           git commit -m "chore: refresh profile [skip ci]"
           git push

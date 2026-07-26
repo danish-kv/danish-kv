@@ -2,7 +2,12 @@
 # The single file you edit to keep the profile fresh. After editing, run
 # scripts/generate_profile_assets.py (or let the weekly workflow do it).
 
-version: "1.2.0"
+version: "1.3.0"
+
+# OPTIONAL — set your birth date (YYYY-MM-DD) and the danishfetch Uptime line
+# becomes a live "X years, Y months, Z days" counter, refreshed weekly.
+# Leave null to keep "always building".
+birth_date: null
 
 # ---- identity / status --------------------------------------------------
 # Shown in the live console ($ status) — keep it short (max ~60 chars).
