@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" width="100%" role="img" aria-labelledby="heroTitle heroDesc" preserveAspectRatio="xMidYMid meet">
+  <title id="heroTitle">DANISH.OS — Muhammed Danish, full-stack systems builder</title>
+  <desc id="heroDesc">A boot-screen style panel. It shows the wordmark DANISH.OS, the name Muhammed Danish, the tagline full-stack systems builder, a system status readout (runtime full_stack, mode curious, location India, status building), a boot progress bar, and a signal path running from interface to application and API to data to infrastructure.</desc>
+
+  <defs>
+    <style>
+      .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif; }
+      .mono { font-family: ui-monospace, SFMono-Regular, "SF Mono", "Cascadia Code", "Fira Code", Menlo, Consolas, monospace; }
+      .fg { fill: #E6EDF3; }
+      .muted { fill: #8B949E; }
+      .dim { fill: #6E7681; }
+      .accent { fill: #E9A23B; }
+
+      .pulse { animation: pulse 2.6s ease-in-out infinite; }
+      @keyframes pulse { 0%, 100% { opacity: .3; } 50% { opacity: 1; } }
+
+      .cursor { animation: blink 1.1s step-end infinite; }
+      @keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+
+      .bar { transform-box: fill-box; transform-origin: left center; animation: fill 3.6s ease-in-out infinite; }
+      @keyframes fill { 0% { transform: scaleX(0); } 55%, 100% { transform: scaleX(1); } }
+
+      .signal { transform-box: fill-box; animation: travel 4.8s cubic-bezier(.45,0,.55,1) infinite; }
+      @keyframes travel {
+        0%   { transform: translateX(0);   opacity: 0; }
+        8%   { opacity: 1; }
+        92%  { opacity: 1; }
+        100% { transform: translateX(900px); opacity: 0; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .pulse, .cursor, .bar, .signal { animation: none; }
+        .bar { transform: scaleX(1); }
+        .signal { opacity: 1; }
+        .cursor { opacity: 1; }
+      }
+    </style>
+
+    <radialGradient id="heroGlow" cx="26%" cy="34%" r="62%">
+      <stop offset="0" stop-color="#E9A23B" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#E9A23B" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="heroSpine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#E9A23B" stop-opacity="0.15"/>
+      <stop offset="0.5" stop-color="#E9A23B" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#E9A23B" stop-opacity="0.15"/>
+    </linearGradient>
+    <pattern id="heroGrid" width="34" height="34" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1.5" fill="#8B949E" opacity="0.09"/>
+    </pattern>
+  </defs>
+
+  <!-- panel -->
+  <rect x="6" y="6" width="1188" height="468" rx="20" fill="#0D1117" stroke="#2A313C" stroke-width="1.5"/>
+  <rect x="6" y="6" width="1188" height="468" rx="20" fill="url(#heroGrid)"/>
+  <rect x="6" y="6" width="1188" height="468" rx="20" fill="url(#heroGlow)"/>
+
+  <!-- title bar -->
+  <circle cx="44" cy="42" r="6" class="accent"/>
+  <circle cx="66" cy="42" r="6" fill="#5A6472"/>
+  <circle cx="88" cy="42" r="6" fill="#39424E"/>
+  <text x="118" y="47" class="mono muted" font-size="13" letter-spacing="1.5">danish.os / boot</text>
+  <circle cx="1030" cy="42" r="4" class="accent pulse"/>
+  <text x="1044" y="46" class="mono muted" font-size="12">online &#183; v1.0.0</text>
+  <line x1="40" y1="68" x2="1160" y2="68" stroke="#2A313C" stroke-width="1"/>
+
+  <!-- identity -->
+  <text x="52" y="198" class="sans" font-size="78" font-weight="800" letter-spacing="-1">
+    <tspan class="fg">DANISH</tspan><tspan class="accent">.OS</tspan>
+  </text>
+  <rect x="56" y="216" width="236" height="4" rx="2" class="accent"/>
+  <text x="56" y="256" class="sans fg" font-size="22" font-weight="600">Muhammed Danish</text>
+  <text x="56" y="285" class="sans muted" font-size="16">Full-stack systems builder</text>
+  <text x="56" y="330" class="mono dim" font-size="13"><tspan class="accent">&gt;</tspan> designing the path from interface to infrastructure</text>
+  <text x="56" y="352" class="mono dim" font-size="13"><tspan class="accent">&gt;</tspan> turning ideas into systems that stay dependable</text>
+
+  <!-- status panel -->
+  <rect x="742" y="96" width="406" height="250" rx="14" fill="#11161D" stroke="#2A313C" stroke-width="1"/>
+  <text x="766" y="130" class="mono accent" font-size="12" letter-spacing="1">system.status</text>
+  <line x1="766" y1="144" x2="1124" y2="144" stroke="#21262D" stroke-width="1"/>
+
+  <g class="mono" font-size="14">
+    <text x="766" y="180" class="muted">runtime</text> <text x="900" y="180" class="dim">=</text> <text x="920" y="180" class="fg">full_stack</text>
+    <text x="766" y="210" class="muted">mode</text>    <text x="900" y="210" class="dim">=</text> <text x="920" y="210" class="fg">curious</text>
+    <text x="766" y="240" class="muted">location</text><text x="900" y="240" class="dim">=</text> <text x="920" y="240" class="fg">India</text>
+    <text x="766" y="270" class="muted">status</text>  <text x="900" y="270" class="dim">=</text> <text x="920" y="270" class="accent">building</text>
+    <circle cx="1002" cy="266" r="4" class="accent pulse"/>
+  </g>
+
+  <text x="766" y="312" class="mono muted" font-size="12">boot</text>
+  <rect x="806" y="304" width="230" height="8" rx="4" fill="#21262D"/>
+  <rect x="806" y="304" width="230" height="8" rx="4" class="accent bar"/>
+  <text x="1048" y="312" class="mono dim" font-size="11" text-anchor="start">100%</text>
+  <text x="766" y="336" class="mono accent" font-size="13">&gt;</text>
+  <rect x="784" y="326" width="9" height="13" class="accent cursor"/>
+
+  <!-- signal path: interface -> application/api -> data -> infrastructure -->
+  <text x="52" y="398" class="mono dim" font-size="11" letter-spacing="1">runtime.path</text>
+  <line x1="150" y1="420" x2="1050" y2="420" stroke="url(#heroSpine)" stroke-width="2"/>
+
+  <g>
+    <circle cx="150"  cy="420" r="7" fill="#0D1117" stroke="#E9A23B" stroke-width="2"/>
+    <circle cx="450"  cy="420" r="7" fill="#0D1117" stroke="#E9A23B" stroke-width="2"/>
+    <circle cx="750"  cy="420" r="7" fill="#0D1117" stroke="#E9A23B" stroke-width="2"/>
+    <circle cx="1050" cy="420" r="7" fill="#0D1117" stroke="#E9A23B" stroke-width="2"/>
+    <circle cx="150"  cy="420" r="2.5" class="accent"/>
+    <circle cx="450"  cy="420" r="2.5" class="accent"/>
+    <circle cx="750"  cy="420" r="2.5" class="accent"/>
+    <circle cx="1050" cy="420" r="2.5" class="accent"/>
+  </g>
+  <circle cx="150" cy="420" r="5" class="accent signal"/>
+
+  <g class="mono muted" font-size="12" text-anchor="middle">
+    <text x="150"  y="448">interface</text>
+    <text x="450"  y="448">application &#183; api</text>
+    <text x="750"  y="448">data</text>
+    <text x="1050" y="448">infrastructure</text>
+  </g>
+</svg>

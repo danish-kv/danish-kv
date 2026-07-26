@@ -1,0 +1,21 @@
+# DANISH.OS — profile data
+# The single file you edit to keep the profile fresh. No code changes needed.
+
+version: "1.0.0"
+
+# Source for the "Latest from the notebook" section. The workflow reads this
+# RSS feed and rewrites the BLOG block in README.md. Change the handle if your
+# Medium username changes.
+medium_feed: "https://medium.com/@danish_muhd/feed"
+
+# One of these is surfaced each week in the Developer Console (rotated by ISO
+# week number, so it changes without spamming commits). Keep them short and
+# make them yours — add, edit, or remove freely.
+notes:
+  - "Clarity is a feature. If the next person can't read it, it isn't finished."
+  - "The data model is the real architecture. Everything else negotiates with it."
+  - "A system that fails silently can't be trusted. Make failure loud."
+  - "Design the API around the workflow, not around the database table."
+  - "Deployment is part of the build, not a chore that happens to it."
+  - "Small reversible changes beat big brave ones almost every time."
+  - "Read the request's whole path before trusting any single piece of it."
