@@ -270,7 +270,7 @@ told. I learn by building the thing and taking it apart.
 **This week's note**
 
 <!-- NOTE:START -->
-> A system that fails silently can't be trusted. Make failure loud.
+> Design the API around the workflow, not around the database table.
 <!-- NOTE:END -->
 
 </details>
@@ -340,7 +340,7 @@ be shaped — I'm glad to talk. Best ways in:
 <sub>DANISH.OS &#183; designing the path from interface to infrastructure</sub>
 <br>
 <sub><!-- REFRESH:START -->
-`DANISH.OS v1.3.0 · last refresh 2026-07-26`
+`DANISH.OS v1.3.0 · last refresh 2026-07-27`
 <!-- REFRESH:END --></sub>
 </div>
 
