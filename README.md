@@ -270,7 +270,7 @@ told. I learn by building the thing and taking it apart.
 **This week's note**
 
 <!-- NOTE:START -->
-> Small reversible changes beat big brave ones almost every time.
+> Read the request's whole path before trusting any single piece of it.
 <!-- NOTE:END -->
 
 </details>
@@ -340,7 +340,7 @@ be shaped — I'm glad to talk. Best ways in:
 <sub>DANISH.OS &#183; designing the path from interface to infrastructure</sub>
 <br>
 <sub><!-- REFRESH:START -->
-`DANISH.OS v1.3.0 · last refresh 2026-08-10`
+`DANISH.OS v1.3.0 · last refresh 2026-08-17`
 <!-- REFRESH:END --></sub>
 </div>
 
