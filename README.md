@@ -270,7 +270,7 @@ told. I learn by building the thing and taking it apart.
 **This week's note**
 
 <!-- NOTE:START -->
-> Read the request's whole path before trusting any single piece of it.
+> Clarity is a feature. If the next person can't read it, it isn't finished.
 <!-- NOTE:END -->
 
 </details>
@@ -340,7 +340,7 @@ be shaped — I'm glad to talk. Best ways in:
 <sub>DANISH.OS &#183; designing the path from interface to infrastructure</sub>
 <br>
 <sub><!-- REFRESH:START -->
-`DANISH.OS v1.3.0 · last refresh 2026-08-17`
+`DANISH.OS v1.3.0 · last refresh 2026-08-24`
 <!-- REFRESH:END --></sub>
 </div>
 
