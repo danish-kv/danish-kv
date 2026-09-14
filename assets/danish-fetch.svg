@@ -118,7 +118,7 @@
     <text x="470" y="400" class="rl" style="animation-delay:1.00s"><tspan class="accent">Stack.Realtime</tspan><tspan class="dim"> .. </tspan><tspan class="fg">websockets</tspan></text>
     <text x="470" y="458" class="rl" style="animation-delay:1.07s"><tspan class="accent">LinkedIn</tspan><tspan class="dim"> ........ </tspan><tspan class="fg">linkedin.com/in/danish5</tspan></text>
     <text x="470" y="483" class="rl" style="animation-delay:1.14s"><tspan class="accent">Medium</tspan><tspan class="dim"> .......... </tspan><tspan class="fg">@danish_muhd</tspan></text>
-    <text x="470" y="541" class="rl" style="animation-delay:1.21s"><tspan class="accent">Repos</tspan><tspan class="dim"> ........... </tspan><tspan class="fg"><tspan id="st-repos">37</tspan></tspan><tspan class="dim"> &#183; Stars: </tspan><tspan class="fg"><tspan id="st-stars">45</tspan></tspan></text>
+    <text x="470" y="541" class="rl" style="animation-delay:1.21s"><tspan class="accent">Repos</tspan><tspan class="dim"> ........... </tspan><tspan class="fg"><tspan id="st-repos">38</tspan></tspan><tspan class="dim"> &#183; Stars: </tspan><tspan class="fg"><tspan id="st-stars">45</tspan></tspan></text>
     <text x="470" y="566" class="rl" style="animation-delay:1.28s"><tspan class="accent">Commits</tspan><tspan class="dim"> ......... </tspan><tspan class="fg"><tspan id="st-commits">620</tspan></tspan><tspan class="dim"> &#183; Followers: </tspan><tspan class="fg"><tspan id="st-followers">29</tspan></tspan></text>
 
   <g class="hd" style="animation-delay:1.1s">
