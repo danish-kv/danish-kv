@@ -270,7 +270,7 @@ told. I learn by building the thing and taking it apart.
 **This week's note**
 
 <!-- NOTE:START -->
-> Design the API around the workflow, not around the database table.
+> Deployment is part of the build, not a chore that happens to it.
 <!-- NOTE:END -->
 
 </details>
@@ -340,7 +340,7 @@ be shaped — I'm glad to talk. Best ways in:
 <sub>DANISH.OS &#183; designing the path from interface to infrastructure</sub>
 <br>
 <sub><!-- REFRESH:START -->
-`DANISH.OS v1.3.0 · last refresh 2026-09-14`
+`DANISH.OS v1.3.0 · last refresh 2026-09-21`
 <!-- REFRESH:END --></sub>
 </div>
 
