@@ -270,7 +270,7 @@ told. I learn by building the thing and taking it apart.
 **This week's note**
 
 <!-- NOTE:START -->
-> Deployment is part of the build, not a chore that happens to it.
+> Small reversible changes beat big brave ones almost every time.
 <!-- NOTE:END -->
 
 </details>
@@ -340,7 +340,7 @@ be shaped — I'm glad to talk. Best ways in:
 <sub>DANISH.OS &#183; designing the path from interface to infrastructure</sub>
 <br>
 <sub><!-- REFRESH:START -->
-`DANISH.OS v1.3.0 · last refresh 2026-09-21`
+`DANISH.OS v1.3.0 · last refresh 2026-09-28`
 <!-- REFRESH:END --></sub>
 </div>
 
